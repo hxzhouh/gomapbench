@@ -1,0 +1,773 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/zhangyunhao116/gomapbench
+cpu: Apple M1 Pro
+                                      │    map.txt     │             swiss_map.txt             │
+                                      │     sec/op     │    sec/op      vs base                │
+MapIter/Int/6-10                         59.05n ±   4%   44.99n ±  21%  -23.80% (p=0.000 n=10)
+MapIter/Int/12-10                        109.6n ±  14%   101.3n ±  17%   -7.61% (p=0.045 n=10)
+MapIter/Int/18-10                        158.4n ±   3%   148.1n ±  11%        ~ (p=0.353 n=10)
+MapIter/Int/24-10                        187.2n ±   6%   163.0n ±   4%  -12.95% (p=0.000 n=10)
+MapIter/Int/30-10                        261.8n ±   8%   230.8n ±  13%  -11.86% (p=0.007 n=10)
+MapIter/Int/64-10                        545.8n ±  23%   463.9n ±   8%  -15.00% (p=0.000 n=10)
+MapIter/Int/128-10                      1074.5n ±  16%   917.3n ±  12%  -14.63% (p=0.000 n=10)
+MapIter/Int/256-10                       2.026µ ±  27%   1.742µ ±   2%  -14.04% (p=0.000 n=10)
+MapIter/Int/512-10                       3.570µ ±  11%   3.778µ ±   7%        ~ (p=0.838 n=10)
+MapIter/Int/1024-10                      7.194µ ±   9%   7.855µ ±  13%   +9.18% (p=0.009 n=10)
+MapIter/Int/2048-10                      17.72µ ±  10%   15.33µ ±   6%  -13.52% (p=0.000 n=10)
+MapIter/Int/4096-10                      36.19µ ±  10%   30.40µ ±   8%  -16.01% (p=0.000 n=10)
+MapIter/Int/8192-10                      73.25µ ±   2%   61.04µ ±   4%  -16.67% (p=0.000 n=10)
+MapIter/Int/65536-10                     571.3µ ±   1%   494.6µ ±  20%  -13.43% (p=0.023 n=10)
+MapAccessHit/Int64/6-10                  3.730n ±   9%   3.409n ±   1%   -8.59% (p=0.000 n=10)
+MapAccessHit/Int64/12-10                 4.891n ±   3%   5.559n ±  22%  +13.66% (p=0.000 n=10)
+MapAccessHit/Int64/18-10                 6.324n ±   9%   5.532n ±  13%  -12.53% (p=0.002 n=10)
+MapAccessHit/Int64/24-10                 5.865n ±  13%   6.762n ±  19%        ~ (p=0.579 n=10)
+MapAccessHit/Int64/30-10                 4.851n ±   5%   5.517n ±   1%  +13.74% (p=0.000 n=10)
+MapAccessHit/Int64/64-10                 5.108n ±   3%   5.574n ±  12%   +9.12% (p=0.000 n=10)
+MapAccessHit/Int64/128-10                5.036n ±   9%   5.916n ±   6%  +17.47% (p=0.000 n=10)
+MapAccessHit/Int64/256-10                5.648n ±   7%   5.541n ±   8%        ~ (p=1.000 n=10)
+MapAccessHit/Int64/512-10                7.176n ±   2%   5.907n ±  29%  -17.68% (p=0.023 n=10)
+MapAccessHit/Int64/1024-10               5.080n ±  13%   5.869n ±   6%  +15.51% (p=0.001 n=10)
+MapAccessHit/Int64/2048-10               7.378n ±   4%   6.339n ±  21%  -14.09% (p=0.035 n=10)
+MapAccessHit/Int64/4096-10              11.945n ±   6%   6.026n ±   3%  -49.56% (p=0.000 n=10)
+MapAccessHit/Int64/8192-10              15.865n ±   3%   6.563n ±   2%  -58.63% (p=0.000 n=10)
+MapAccessHit/Int64/65536-10             19.365n ±   5%   7.281n ±   8%  -62.40% (p=0.000 n=10)
+MapAccessHit/Int32/6-10                  4.161n ±   9%   3.431n ±   2%  -17.53% (p=0.000 n=10)
+MapAccessHit/Int32/12-10                 5.121n ±  13%   5.521n ±  20%   +7.81% (p=0.004 n=10)
+MapAccessHit/Int32/18-10                 6.266n ±   4%   5.442n ±   1%  -13.14% (p=0.000 n=10)
+MapAccessHit/Int32/24-10                 6.282n ±   8%   5.731n ±  16%        ~ (p=0.353 n=10)
+MapAccessHit/Int32/30-10                 4.864n ±  18%   5.628n ±   7%  +15.72% (p=0.005 n=10)
+MapAccessHit/Int32/64-10                 4.878n ±   3%   5.646n ±   5%  +15.74% (p=0.001 n=10)
+MapAccessHit/Int32/128-10                4.989n ±  13%   5.612n ±  16%  +12.49% (p=0.019 n=10)
+MapAccessHit/Int32/256-10                5.511n ±   5%   5.326n ±   7%   -3.37% (p=0.015 n=10)
+MapAccessHit/Int32/512-10                7.326n ±   5%   4.981n ±   3%  -32.01% (p=0.000 n=10)
+MapAccessHit/Int32/1024-10               4.988n ±  13%   5.406n ±   9%   +8.38% (p=0.007 n=10)
+MapAccessHit/Int32/2048-10               7.864n ±  28%   5.625n ±   7%  -28.47% (p=0.000 n=10)
+MapAccessHit/Int32/4096-10              12.005n ±   4%   5.907n ±   5%  -50.80% (p=0.000 n=10)
+MapAccessHit/Int32/8192-10              15.450n ±   8%   6.811n ±   8%  -55.91% (p=0.000 n=10)
+MapAccessHit/Int32/65536-10             18.745n ±   1%   7.512n ±   8%  -59.93% (p=0.000 n=10)
+MapAccessHit/Str/6-10                    8.022n ±  26%   7.676n ±   1%   -4.31% (p=0.000 n=10)
+MapAccessHit/Str/12-10                   9.160n ±  13%   9.367n ±  16%        ~ (p=0.529 n=10)
+MapAccessHit/Str/18-10                   7.851n ±   7%   8.806n ±   5%  +12.17% (p=0.005 n=10)
+MapAccessHit/Str/24-10                   8.938n ±   7%   9.610n ±  10%   +7.52% (p=0.019 n=10)
+MapAccessHit/Str/30-10                   7.545n ±   4%   8.380n ±   3%  +11.07% (p=0.000 n=10)
+MapAccessHit/Str/64-10                   7.304n ±  10%   8.426n ±   4%  +15.35% (p=0.000 n=10)
+MapAccessHit/Str/128-10                  7.846n ±   5%   8.535n ±  15%   +8.77% (p=0.001 n=10)
+MapAccessHit/Str/256-10                  9.338n ±   4%   9.070n ±   2%        ~ (p=0.075 n=10)
+MapAccessHit/Str/512-10                 11.760n ±   7%   8.732n ±   2%  -25.75% (p=0.000 n=10)
+MapAccessHit/Str/1024-10                15.825n ±   5%   9.783n ±   3%  -38.18% (p=0.000 n=10)
+MapAccessHit/Str/2048-10                19.980n ±   4%   9.760n ±   1%  -51.15% (p=0.000 n=10)
+MapAccessHit/Str/4096-10                 24.42n ±   2%   10.89n ±  11%  -55.38% (p=0.000 n=10)
+MapAccessHit/Str/8192-10                 26.44n ±   7%   10.61n ±   2%  -59.89% (p=0.000 n=10)
+MapAccessHit/Str/65536-10                30.84n ±   3%   11.32n ±   1%  -63.31% (p=0.000 n=10)
+MapAccessMiss/Int64/6-10                 5.777n ±   6%   4.371n ±   1%  -24.33% (p=0.000 n=10)
+MapAccessMiss/Int64/12-10                7.102n ± 105%   9.739n ±  45%        ~ (p=0.280 n=10)
+MapAccessMiss/Int64/18-10                7.091n ±   1%   6.066n ±  62%        ~ (p=0.481 n=10)
+MapAccessMiss/Int64/24-10                10.59n ±  33%   10.02n ±  70%        ~ (p=0.529 n=10)
+MapAccessMiss/Int64/30-10                7.146n ±   1%   5.529n ±   3%  -22.62% (p=0.002 n=10)
+MapAccessMiss/Int64/64-10                7.095n ±   2%   6.575n ±  18%   -7.32% (p=0.023 n=10)
+MapAccessMiss/Int64/128-10               7.103n ±   2%   6.034n ±   9%  -15.06% (p=0.000 n=10)
+MapAccessMiss/Int64/256-10               7.116n ±   5%   5.488n ±   5%  -22.88% (p=0.000 n=10)
+MapAccessMiss/Int64/512-10               7.076n ±   3%   5.522n ±   3%  -21.97% (p=0.000 n=10)
+MapAccessMiss/Int64/1024-10              7.100n ±   1%   6.124n ±   8%  -13.75% (p=0.000 n=10)
+MapAccessMiss/Int64/2048-10              7.039n ±   2%   6.511n ±   5%   -7.51% (p=0.001 n=10)
+MapAccessMiss/Int64/4096-10              7.107n ±   1%   6.597n ±   3%   -7.18% (p=0.000 n=10)
+MapAccessMiss/Int64/8192-10              7.332n ±   2%   6.810n ±   2%   -7.11% (p=0.000 n=10)
+MapAccessMiss/Int64/65536-10             7.667n ±   2%   7.217n ±   1%   -5.87% (p=0.000 n=10)
+MapAccessMiss/Int32/6-10                 5.716n ±   3%   4.411n ±   0%  -22.84% (p=0.000 n=10)
+MapAccessMiss/Int32/12-10                7.372n ± 100%   5.833n ± 133%        ~ (p=0.052 n=10)
+MapAccessMiss/Int32/18-10                7.026n ±   4%   5.493n ±  72%        ~ (p=0.315 n=10)
+MapAccessMiss/Int32/24-10               10.680n ±  34%   9.718n ±  83%        ~ (p=0.896 n=10)
+MapAccessMiss/Int32/30-10                7.012n ±   1%   5.400n ±   3%  -22.98% (p=0.001 n=10)
+MapAccessMiss/Int32/64-10                7.066n ±   1%   5.888n ±   9%  -16.66% (p=0.001 n=10)
+MapAccessMiss/Int32/128-10               7.030n ±   3%   5.657n ±   5%  -19.54% (p=0.002 n=10)
+MapAccessMiss/Int32/256-10               7.032n ±   1%   5.467n ±   3%  -22.25% (p=0.000 n=10)
+MapAccessMiss/Int32/512-10               7.130n ±   3%   5.518n ±   2%  -22.61% (p=0.000 n=10)
+MapAccessMiss/Int32/1024-10              7.032n ±   1%   6.058n ±   5%  -13.84% (p=0.000 n=10)
+MapAccessMiss/Int32/2048-10              7.051n ±   4%   6.320n ±   3%  -10.36% (p=0.000 n=10)
+MapAccessMiss/Int32/4096-10              8.040n ±  21%   6.463n ±   1%  -19.63% (p=0.000 n=10)
+MapAccessMiss/Int32/8192-10              7.406n ±   4%   6.540n ±   1%  -11.70% (p=0.000 n=10)
+MapAccessMiss/Int32/65536-10             7.900n ±  25%   7.093n ±   5%  -10.22% (p=0.000 n=10)
+MapAccessMiss/Str/6-10                   5.798n ±   5%   9.535n ±   1%  +64.44% (p=0.000 n=10)
+MapAccessMiss/Str/12-10                 10.505n ±   3%   9.712n ±  29%        ~ (p=0.896 n=10)
+MapAccessMiss/Str/18-10                  8.877n ±  14%   7.765n ±   6%  -12.53% (p=0.000 n=10)
+MapAccessMiss/Str/24-10                  11.13n ±  22%   10.38n ±  21%        ~ (p=0.289 n=10)
+MapAccessMiss/Str/30-10                 10.405n ±  21%   6.917n ±  12%  -33.52% (p=0.000 n=10)
+MapAccessMiss/Str/64-10                 12.845n ±  21%   9.017n ±  22%  -29.80% (p=0.009 n=10)
+MapAccessMiss/Str/128-10                17.065n ±   7%   8.750n ±  30%  -48.73% (p=0.000 n=10)
+MapAccessMiss/Str/256-10                14.915n ±   3%   8.930n ±  16%  -40.13% (p=0.000 n=10)
+MapAccessMiss/Str/512-10                12.325n ±   5%   8.636n ±  28%  -29.94% (p=0.000 n=10)
+MapAccessMiss/Str/1024-10                11.87n ±   4%   10.19n ±   6%  -14.16% (p=0.000 n=10)
+MapAccessMiss/Str/2048-10               18.740n ±   4%   8.986n ±   4%  -52.05% (p=0.000 n=10)
+MapAccessMiss/Str/4096-10                14.64n ±   3%   10.95n ±  15%  -25.15% (p=0.000 n=10)
+MapAccessMiss/Str/8192-10                12.87n ±   8%   10.28n ±   8%  -20.09% (p=0.000 n=10)
+MapAccessMiss/Str/65536-10               15.46n ±  21%   10.60n ±  16%  -31.41% (p=0.000 n=10)
+MapAssignGrow/Int64/6-10                 51.70n ±   2%   36.62n ±   1%  -29.16% (p=0.000 n=10)
+MapAssignGrow/Int64/12-10                279.2n ±   9%   242.9n ±   1%  -13.02% (p=0.000 n=10)
+MapAssignGrow/Int64/18-10                631.8n ±   5%   540.9n ±   2%  -14.39% (p=0.000 n=10)
+MapAssignGrow/Int64/24-10                815.9n ±  11%   601.0n ±   2%  -26.35% (p=0.000 n=10)
+MapAssignGrow/Int64/30-10                1.436µ ±   3%   1.150µ ±   1%  -19.92% (p=0.000 n=10)
+MapAssignGrow/Int64/64-10                3.255µ ±   6%   2.330µ ±   4%  -28.42% (p=0.000 n=10)
+MapAssignGrow/Int64/128-10               6.431µ ±  20%   4.586µ ±   0%  -28.69% (p=0.000 n=10)
+MapAssignGrow/Int64/256-10              12.023µ ±  10%   8.850µ ±   0%  -26.39% (p=0.000 n=10)
+MapAssignGrow/Int64/512-10               23.07µ ±   3%   17.45µ ±   7%  -24.36% (p=0.000 n=10)
+MapAssignGrow/Int64/1024-10              40.36µ ±   6%   35.65µ ±   3%  -11.68% (p=0.000 n=10)
+MapAssignGrow/Int64/2048-10              75.14µ ±   6%   74.44µ ±   0%        ~ (p=0.218 n=10)
+MapAssignGrow/Int64/4096-10              170.7µ ±   5%   154.2µ ±   0%   -9.66% (p=0.000 n=10)
+MapAssignGrow/Int64/8192-10              365.6µ ±   3%   323.1µ ±   4%  -11.64% (p=0.001 n=10)
+MapAssignGrow/Int64/65536-10             3.331m ±   2%   2.817m ±   7%  -15.43% (p=0.000 n=10)
+MapAssignGrow/Int32/6-10                 51.39n ±   1%   39.23n ±   2%  -23.67% (p=0.000 n=10)
+MapAssignGrow/Int32/12-10                269.9n ±   6%   245.8n ±   0%   -8.95% (p=0.000 n=10)
+MapAssignGrow/Int32/18-10                619.7n ±  11%   557.2n ±   3%  -10.08% (p=0.001 n=10)
+MapAssignGrow/Int32/24-10                761.4n ±   4%   614.5n ±   2%  -19.29% (p=0.000 n=10)
+MapAssignGrow/Int32/30-10                1.384µ ±   6%   1.165µ ±   1%  -15.82% (p=0.000 n=10)
+MapAssignGrow/Int32/64-10                3.087µ ±   7%   2.367µ ±   0%  -23.32% (p=0.000 n=10)
+MapAssignGrow/Int32/128-10               6.167µ ±   3%   4.701µ ±   7%  -23.77% (p=0.000 n=10)
+MapAssignGrow/Int32/256-10              11.579µ ±   3%   9.092µ ±   1%  -21.48% (p=0.000 n=10)
+MapAssignGrow/Int32/512-10               21.53µ ±   4%   17.82µ ±   7%  -17.21% (p=0.000 n=10)
+MapAssignGrow/Int32/1024-10              38.34µ ±   9%   36.39µ ±   6%   -5.11% (p=0.023 n=10)
+MapAssignGrow/Int32/2048-10              71.60µ ±   8%   75.39µ ±   1%   +5.30% (p=0.019 n=10)
+MapAssignGrow/Int32/4096-10              168.7µ ±   6%   155.3µ ±   0%   -7.96% (p=0.000 n=10)
+MapAssignGrow/Int32/8192-10              382.9µ ±  23%   318.1µ ±   1%  -16.92% (p=0.000 n=10)
+MapAssignGrow/Int32/65536-10             3.626m ±  19%   2.822m ±   1%  -22.17% (p=0.000 n=10)
+MapAssignGrow/Str/6-10                   73.13n ±   3%   70.41n ±   0%   -3.72% (p=0.000 n=10)
+MapAssignGrow/Str/12-10                  341.4n ±  16%   326.1n ±   2%   -4.48% (p=0.001 n=10)
+MapAssignGrow/Str/18-10                  822.5n ±   6%   760.4n ±   6%   -7.55% (p=0.001 n=10)
+MapAssignGrow/Str/24-10                  970.1n ±   7%   810.5n ±   1%  -16.44% (p=0.000 n=10)
+MapAssignGrow/Str/30-10                  1.789µ ±   5%   1.520µ ±   3%  -15.04% (p=0.000 n=10)
+MapAssignGrow/Str/64-10                  4.070µ ±   3%   3.196µ ±   1%  -21.48% (p=0.000 n=10)
+MapAssignGrow/Str/128-10                 8.511µ ±   8%   6.432µ ±   0%  -24.43% (p=0.000 n=10)
+MapAssignGrow/Str/256-10                 17.04µ ±   6%   13.12µ ±   0%  -22.96% (p=0.000 n=10)
+MapAssignGrow/Str/512-10                 34.36µ ±   6%   26.48µ ±   1%  -22.93% (p=0.000 n=10)
+MapAssignGrow/Str/1024-10                67.12µ ±   2%   54.07µ ±   6%  -19.45% (p=0.001 n=10)
+MapAssignGrow/Str/2048-10                135.5µ ±   4%   115.2µ ±   7%  -14.98% (p=0.000 n=10)
+MapAssignGrow/Str/4096-10                273.6µ ±   4%   236.3µ ±   2%  -13.61% (p=0.000 n=10)
+MapAssignGrow/Str/8192-10                570.7µ ±   4%   498.3µ ±   1%  -12.68% (p=0.000 n=10)
+MapAssignGrow/Str/65536-10               5.398m ±   3%   5.002m ±   6%   -7.33% (p=0.002 n=10)
+MapAssignPreAllocate/Pointer/6-10       102.95n ±   9%   93.69n ±   0%   -8.99% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/12-10       337.1n ±   6%   263.9n ±  14%  -21.71% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/18-10       544.3n ±   2%   357.8n ±   4%  -34.26% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/24-10       738.4n ±   2%   455.8n ±   1%  -38.27% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/30-10       942.2n ±   2%   578.6n ±   5%  -38.59% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/64-10       2.093µ ±   4%   1.148µ ±  16%  -45.15% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/128-10      4.184µ ±   2%   2.261µ ±   5%  -45.97% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/256-10      8.349µ ±   4%   4.420µ ±   2%  -47.06% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/512-10     16.767µ ±   5%   8.687µ ±   4%  -48.19% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/1024-10     32.95µ ±   3%   17.45µ ±   1%  -47.05% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/2048-10     68.50µ ±  13%   34.38µ ±   0%  -49.81% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/4096-10    142.88µ ±   7%   70.89µ ±   0%  -50.38% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/8192-10     290.4µ ±  17%   149.0µ ±  12%  -48.68% (p=0.000 n=10)
+MapAssignPreAllocate/Pointer/65536-10    2.652m ±   4%   1.350m ±   1%  -49.09% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/6-10          53.84n ±   1%   39.34n ±   5%  -26.94% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/12-10         229.3n ±   1%   159.7n ±   0%  -30.35% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/18-10         374.9n ±   3%   214.5n ±   1%  -42.81% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/24-10         532.2n ±   6%   261.1n ±   6%  -50.95% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/30-10         656.0n ±   2%   336.9n ±   5%  -48.64% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/64-10        1484.5n ±   6%   629.6n ±   1%  -57.59% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/128-10        2.857µ ±   3%   1.199µ ±   4%  -58.05% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/256-10        4.752µ ±   3%   2.243µ ±   1%  -52.81% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/512-10        7.814µ ±   2%   4.407µ ±   1%  -43.59% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/1024-10      10.179µ ±   5%   9.622µ ±   1%   -5.47% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/2048-10       40.44µ ±   3%   19.47µ ±   3%  -51.87% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/4096-10       89.68µ ±   7%   39.54µ ±   8%  -55.91% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/8192-10      196.95µ ±   2%   81.56µ ±   1%  -58.59% (p=0.000 n=10)
+MapAssignPreAllocate/Int64/65536-10     1660.2µ ±   2%   819.6µ ±  11%  -50.63% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/6-10          53.91n ±   1%   41.04n ±   0%  -23.87% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/12-10         227.1n ±   2%   161.1n ±   5%  -29.06% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/18-10         370.9n ±   1%   215.6n ±   0%  -41.87% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/24-10         522.9n ±   3%   262.6n ±   1%  -49.79% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/30-10         641.2n ±   4%   335.9n ±   5%  -47.62% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/64-10        1444.0n ±   4%   627.8n ±   2%  -56.53% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/128-10        2.832µ ±   3%   1.184µ ±   0%  -58.21% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/256-10        4.848µ ±   4%   2.241µ ±   1%  -53.77% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/512-10        7.673µ ±   5%   4.416µ ±   1%  -42.45% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/1024-10      10.123µ ±  18%   9.639µ ±   5%        ~ (p=0.315 n=10)
+MapAssignPreAllocate/Int32/2048-10       39.38µ ±  13%   19.34µ ±   1%  -50.88% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/4096-10       88.60µ ±   3%   39.36µ ±   1%  -55.57% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/8192-10      195.93µ ±   9%   81.13µ ±   5%  -58.59% (p=0.000 n=10)
+MapAssignPreAllocate/Int32/65536-10     1661.9µ ±   5%   724.7µ ±   7%  -56.39% (p=0.000 n=10)
+MapAssignPreAllocate/Str/6-10            74.95n ±  17%   71.45n ±   0%   -4.67% (p=0.000 n=10)
+MapAssignPreAllocate/Str/12-10           278.0n ±   3%   280.1n ±   0%        ~ (p=0.670 n=10)
+MapAssignPreAllocate/Str/18-10           454.1n ±  11%   392.5n ±   1%  -13.57% (p=0.000 n=10)
+MapAssignPreAllocate/Str/24-10           624.3n ±   4%   501.6n ±   4%  -19.66% (p=0.000 n=10)
+MapAssignPreAllocate/Str/30-10           842.4n ±   2%   660.1n ±   1%  -21.63% (p=0.000 n=10)
+MapAssignPreAllocate/Str/64-10           1.933µ ±   8%   1.353µ ±   2%  -30.03% (p=0.000 n=10)
+MapAssignPreAllocate/Str/128-10          3.858µ ±   8%   2.599µ ±   0%  -32.63% (p=0.000 n=10)
+MapAssignPreAllocate/Str/256-10          7.305µ ±  12%   5.065µ ±   4%  -30.67% (p=0.000 n=10)
+MapAssignPreAllocate/Str/512-10          14.33µ ±   4%   10.04µ ±   1%  -29.95% (p=0.000 n=10)
+MapAssignPreAllocate/Str/1024-10         27.96µ ±   2%   22.70µ ±   0%  -18.80% (p=0.000 n=10)
+MapAssignPreAllocate/Str/2048-10         55.99µ ±   4%   48.30µ ±   1%  -13.72% (p=0.000 n=10)
+MapAssignPreAllocate/Str/4096-10         113.2µ ±   4%   103.6µ ±   7%   -8.52% (p=0.002 n=10)
+MapAssignPreAllocate/Str/8192-10         240.9µ ±   6%   223.0µ ±   2%   -7.45% (p=0.001 n=10)
+MapAssignPreAllocate/Str/65536-10        2.372m ±  18%   1.870m ±   3%  -21.15% (p=0.000 n=10)
+MapAssignReuse/Pointer/6-10             110.40n ±   4%   98.13n ±   1%  -11.11% (p=0.000 n=10)
+MapAssignReuse/Pointer/12-10             286.1n ±   3%   195.0n ±   0%  -31.82% (p=0.000 n=10)
+MapAssignReuse/Pointer/18-10             473.8n ±  12%   290.2n ±   1%  -38.75% (p=0.000 n=10)
+MapAssignReuse/Pointer/24-10             650.8n ±   3%   386.1n ±   1%  -40.67% (p=0.000 n=10)
+MapAssignReuse/Pointer/30-10             794.8n ±   7%   482.3n ±   0%  -39.31% (p=0.000 n=10)
+MapAssignReuse/Pointer/64-10             1.863µ ±  14%   1.018µ ±   0%  -45.37% (p=0.000 n=10)
+MapAssignReuse/Pointer/128-10            3.896µ ±  10%   2.019µ ±   0%  -48.18% (p=0.000 n=10)
+MapAssignReuse/Pointer/256-10            8.248µ ±  15%   4.053µ ±   4%  -50.86% (p=0.000 n=10)
+MapAssignReuse/Pointer/512-10           14.818µ ±   5%   8.037µ ±   0%  -45.76% (p=0.000 n=10)
+MapAssignReuse/Pointer/1024-10           28.77µ ±   6%   16.29µ ±   5%  -43.39% (p=0.000 n=10)
+MapAssignReuse/Pointer/2048-10           58.06µ ±   3%   32.57µ ±   0%  -43.90% (p=0.000 n=10)
+MapAssignReuse/Pointer/4096-10          122.70µ ±   9%   66.72µ ±   3%  -45.63% (p=0.000 n=10)
+MapAssignReuse/Pointer/8192-10           264.8µ ±   4%   142.9µ ±   1%  -46.03% (p=0.000 n=10)
+MapAssignReuse/Pointer/65536-10          2.339m ±  19%   1.325m ±   5%  -43.35% (p=0.000 n=10)
+MapAssignReuse/Int64/6-10                57.81n ±   3%   43.57n ±   0%  -24.63% (p=0.000 n=10)
+MapAssignReuse/Int64/12-10               183.8n ±   2%   102.5n ±   3%  -44.28% (p=0.000 n=10)
+MapAssignReuse/Int64/18-10               307.1n ±   8%   150.4n ±   0%  -51.02% (p=0.000 n=10)
+MapAssignReuse/Int64/24-10               453.2n ±   6%   198.3n ±   0%  -56.24% (p=0.000 n=10)
+MapAssignReuse/Int64/30-10               530.3n ±   4%   246.6n ±   1%  -53.50% (p=0.000 n=10)
+MapAssignReuse/Int64/64-10              1154.5n ±   6%   508.6n ±   1%  -55.95% (p=0.000 n=10)
+MapAssignReuse/Int64/128-10             2274.0n ±   9%   996.2n ±   1%  -56.19% (p=0.000 n=10)
+MapAssignReuse/Int64/256-10              3.910µ ±  11%   1.948µ ±   1%  -50.19% (p=0.000 n=10)
+MapAssignReuse/Int64/512-10              5.994µ ±   2%   3.954µ ±  10%  -34.03% (p=0.000 n=10)
+MapAssignReuse/Int64/1024-10             7.439µ ±   2%   8.879µ ±   0%  +19.36% (p=0.000 n=10)
+MapAssignReuse/Int64/2048-10             32.72µ ±   3%   17.90µ ±   0%  -45.29% (p=0.000 n=10)
+MapAssignReuse/Int64/4096-10             75.45µ ±   3%   36.29µ ±   1%  -51.90% (p=0.000 n=10)
+MapAssignReuse/Int64/8192-10            173.40µ ±  10%   76.30µ ±   2%  -55.99% (p=0.000 n=10)
+MapAssignReuse/Int64/65536-10           1467.4µ ±   3%   634.1µ ±   8%  -56.79% (p=0.000 n=10)
+MapAssignReuse/Int32/6-10                55.94n ±   1%   45.24n ±   1%  -19.13% (p=0.000 n=10)
+MapAssignReuse/Int32/12-10               189.3n ±   9%   102.0n ±   1%  -46.10% (p=0.000 n=10)
+MapAssignReuse/Int32/18-10               303.9n ±   7%   150.6n ±   3%  -50.45% (p=0.000 n=10)
+MapAssignReuse/Int32/24-10               448.7n ±   1%   198.1n ±   5%  -55.85% (p=0.000 n=10)
+MapAssignReuse/Int32/30-10               535.1n ±   7%   246.6n ±   1%  -53.92% (p=0.000 n=10)
+MapAssignReuse/Int32/64-10              1132.0n ±  12%   509.5n ±   2%  -54.99% (p=0.000 n=10)
+MapAssignReuse/Int32/128-10             2226.5n ±   2%   987.2n ±   0%  -55.66% (p=0.000 n=10)
+MapAssignReuse/Int32/256-10              3.776µ ±   5%   1.949µ ±   5%  -48.39% (p=0.000 n=10)
+MapAssignReuse/Int32/512-10              5.922µ ±   9%   3.940µ ±   0%  -33.47% (p=0.000 n=10)
+MapAssignReuse/Int32/1024-10             7.725µ ±  14%   8.880µ ±   0%  +14.94% (p=0.001 n=10)
+MapAssignReuse/Int32/2048-10             32.95µ ±   8%   17.89µ ±   0%  -45.70% (p=0.000 n=10)
+MapAssignReuse/Int32/4096-10             72.44µ ±   9%   36.27µ ±   0%  -49.94% (p=0.000 n=10)
+MapAssignReuse/Int32/8192-10            185.20µ ± 161%   76.12µ ±   1%  -58.90% (p=0.000 n=10)
+MapAssignReuse/Int32/65536-10           1517.7µ ±   3%   626.5µ ±   5%  -58.72% (p=0.000 n=10)
+MapAssignReuse/Str/6-10                  83.21n ±   4%   71.75n ±   0%  -13.77% (p=0.000 n=10)
+MapAssignReuse/Str/12-10                 235.2n ±   6%   213.5n ±   9%   -9.25% (p=0.001 n=10)
+MapAssignReuse/Str/18-10                 394.8n ±   3%   310.9n ±   0%  -21.27% (p=0.000 n=10)
+MapAssignReuse/Str/24-10                 560.0n ±   3%   424.6n ±   1%  -24.17% (p=0.000 n=10)
+MapAssignReuse/Str/30-10                 714.9n ±   5%   536.0n ±   0%  -25.02% (p=0.000 n=10)
+MapAssignReuse/Str/64-10                 1.572µ ±   8%   1.185µ ±   3%  -24.63% (p=0.000 n=10)
+MapAssignReuse/Str/128-10                3.290µ ±   4%   2.400µ ±   0%  -27.06% (p=0.000 n=10)
+MapAssignReuse/Str/256-10                6.426µ ±   4%   4.878µ ±   3%  -24.09% (p=0.000 n=10)
+MapAssignReuse/Str/512-10               13.025µ ±   1%   9.811µ ±   0%  -24.67% (p=0.000 n=10)
+MapAssignReuse/Str/1024-10               26.19µ ±   3%   22.68µ ±   2%  -13.42% (p=0.000 n=10)
+MapAssignReuse/Str/2048-10               52.05µ ±   9%   45.50µ ±   2%  -12.59% (p=0.000 n=10)
+MapAssignReuse/Str/4096-10              105.08µ ±   2%   95.10µ ±   0%   -9.50% (p=0.000 n=10)
+MapAssignReuse/Str/8192-10               219.5µ ±   3%   198.6µ ±   1%   -9.53% (p=0.000 n=10)
+MapAssignReuse/Str/65536-10              1.924m ±   2%   1.759m ±   2%   -8.57% (p=0.000 n=10)
+geomean                                  669.1n          482.2n         -27.93%
+
+                                      │ swiss_map.txt  │
+                                      │      B/op      │
+MapIter/Int/6-10                          0.000 ± 0%
+MapIter/Int/12-10                         0.000 ± 0%
+MapIter/Int/18-10                         0.000 ± 0%
+MapIter/Int/24-10                         0.000 ± 0%
+MapIter/Int/30-10                         0.000 ± 0%
+MapIter/Int/64-10                         0.000 ± 0%
+MapIter/Int/128-10                        0.000 ± 0%
+MapIter/Int/256-10                        0.000 ± 0%
+MapIter/Int/512-10                        0.000 ± 0%
+MapIter/Int/1024-10                       0.000 ± 0%
+MapIter/Int/2048-10                       0.000 ± 0%
+MapIter/Int/4096-10                       0.000 ± 0%
+MapIter/Int/8192-10                       0.000 ± 0%
+MapIter/Int/65536-10                      0.000 ± 0%
+MapAccessHit/Int64/6-10                   0.000 ± 0%
+MapAccessHit/Int64/12-10                  0.000 ± 0%
+MapAccessHit/Int64/18-10                  0.000 ± 0%
+MapAccessHit/Int64/24-10                  0.000 ± 0%
+MapAccessHit/Int64/30-10                  0.000 ± 0%
+MapAccessHit/Int64/64-10                  0.000 ± 0%
+MapAccessHit/Int64/128-10                 0.000 ± 0%
+MapAccessHit/Int64/256-10                 0.000 ± 0%
+MapAccessHit/Int64/512-10                 0.000 ± 0%
+MapAccessHit/Int64/1024-10                0.000 ± 0%
+MapAccessHit/Int64/2048-10                0.000 ± 0%
+MapAccessHit/Int64/4096-10                0.000 ± 0%
+MapAccessHit/Int64/8192-10                0.000 ± 0%
+MapAccessHit/Int64/65536-10               0.000 ± 0%
+MapAccessHit/Int32/6-10                   0.000 ± 0%
+MapAccessHit/Int32/12-10                  0.000 ± 0%
+MapAccessHit/Int32/18-10                  0.000 ± 0%
+MapAccessHit/Int32/24-10                  0.000 ± 0%
+MapAccessHit/Int32/30-10                  0.000 ± 0%
+MapAccessHit/Int32/64-10                  0.000 ± 0%
+MapAccessHit/Int32/128-10                 0.000 ± 0%
+MapAccessHit/Int32/256-10                 0.000 ± 0%
+MapAccessHit/Int32/512-10                 0.000 ± 0%
+MapAccessHit/Int32/1024-10                0.000 ± 0%
+MapAccessHit/Int32/2048-10                0.000 ± 0%
+MapAccessHit/Int32/4096-10                0.000 ± 0%
+MapAccessHit/Int32/8192-10                0.000 ± 0%
+MapAccessHit/Int32/65536-10               0.000 ± 0%
+MapAccessHit/Str/6-10                     0.000 ± 0%
+MapAccessHit/Str/12-10                    0.000 ± 0%
+MapAccessHit/Str/18-10                    0.000 ± 0%
+MapAccessHit/Str/24-10                    0.000 ± 0%
+MapAccessHit/Str/30-10                    0.000 ± 0%
+MapAccessHit/Str/64-10                    0.000 ± 0%
+MapAccessHit/Str/128-10                   0.000 ± 0%
+MapAccessHit/Str/256-10                   0.000 ± 0%
+MapAccessHit/Str/512-10                   0.000 ± 0%
+MapAccessHit/Str/1024-10                  0.000 ± 0%
+MapAccessHit/Str/2048-10                  0.000 ± 0%
+MapAccessHit/Str/4096-10                  0.000 ± 0%
+MapAccessHit/Str/8192-10                  0.000 ± 0%
+MapAccessHit/Str/65536-10                 0.000 ± 0%
+MapAccessMiss/Int64/6-10                  0.000 ± 0%
+MapAccessMiss/Int64/12-10                 0.000 ± 0%
+MapAccessMiss/Int64/18-10                 0.000 ± 0%
+MapAccessMiss/Int64/24-10                 0.000 ± 0%
+MapAccessMiss/Int64/30-10                 0.000 ± 0%
+MapAccessMiss/Int64/64-10                 0.000 ± 0%
+MapAccessMiss/Int64/128-10                0.000 ± 0%
+MapAccessMiss/Int64/256-10                0.000 ± 0%
+MapAccessMiss/Int64/512-10                0.000 ± 0%
+MapAccessMiss/Int64/1024-10               0.000 ± 0%
+MapAccessMiss/Int64/2048-10               0.000 ± 0%
+MapAccessMiss/Int64/4096-10               0.000 ± 0%
+MapAccessMiss/Int64/8192-10               0.000 ± 0%
+MapAccessMiss/Int64/65536-10              0.000 ± 0%
+MapAccessMiss/Int32/6-10                  0.000 ± 0%
+MapAccessMiss/Int32/12-10                 0.000 ± 0%
+MapAccessMiss/Int32/18-10                 0.000 ± 0%
+MapAccessMiss/Int32/24-10                 0.000 ± 0%
+MapAccessMiss/Int32/30-10                 0.000 ± 0%
+MapAccessMiss/Int32/64-10                 0.000 ± 0%
+MapAccessMiss/Int32/128-10                0.000 ± 0%
+MapAccessMiss/Int32/256-10                0.000 ± 0%
+MapAccessMiss/Int32/512-10                0.000 ± 0%
+MapAccessMiss/Int32/1024-10               0.000 ± 0%
+MapAccessMiss/Int32/2048-10               0.000 ± 0%
+MapAccessMiss/Int32/4096-10               0.000 ± 0%
+MapAccessMiss/Int32/8192-10               0.000 ± 0%
+MapAccessMiss/Int32/65536-10              0.000 ± 0%
+MapAccessMiss/Str/6-10                    0.000 ± 0%
+MapAccessMiss/Str/12-10                   0.000 ± 0%
+MapAccessMiss/Str/18-10                   0.000 ± 0%
+MapAccessMiss/Str/24-10                   0.000 ± 0%
+MapAccessMiss/Str/30-10                   0.000 ± 0%
+MapAccessMiss/Str/64-10                   0.000 ± 0%
+MapAccessMiss/Str/128-10                  0.000 ± 0%
+MapAccessMiss/Str/256-10                  0.000 ± 0%
+MapAccessMiss/Str/512-10                  0.000 ± 0%
+MapAccessMiss/Str/1024-10                 0.000 ± 0%
+MapAccessMiss/Str/2048-10                 0.000 ± 0%
+MapAccessMiss/Str/4096-10                 0.000 ± 0%
+MapAccessMiss/Str/8192-10                 0.000 ± 0%
+MapAccessMiss/Str/65536-10                0.000 ± 0%
+MapAssignGrow/Int64/6-10                  0.000 ± 0%
+MapAssignGrow/Int64/12-10                 328.0 ± 0%
+MapAssignGrow/Int64/18-10                 936.0 ± 0%
+MapAssignGrow/Int64/24-10                 936.0 ± 0%
+MapAssignGrow/Int64/30-10               2.070Ki ± 0%
+MapAssignGrow/Int64/64-10               4.352Ki ± 0%
+MapAssignGrow/Int64/128-10              9.133Ki ± 0%
+MapAssignGrow/Int64/256-10              18.41Ki ± 0%
+MapAssignGrow/Int64/512-10              36.45Ki ± 0%
+MapAssignGrow/Int64/1024-10             72.52Ki ± 0%
+MapAssignGrow/Int64/2048-10             144.7Ki ± 0%
+MapAssignGrow/Int64/4096-10             289.0Ki ± 0%
+MapAssignGrow/Int64/8192-10             577.6Ki ± 0%
+MapAssignGrow/Int64/65536-10            4.510Mi ± 0%
+MapAssignGrow/Int32/6-10                  0.000 ± 0%
+MapAssignGrow/Int32/12-10                 328.0 ± 0%
+MapAssignGrow/Int32/18-10                 936.0 ± 0%
+MapAssignGrow/Int32/24-10                 936.0 ± 0%
+MapAssignGrow/Int32/30-10               2.070Ki ± 0%
+MapAssignGrow/Int32/64-10               4.352Ki ± 0%
+MapAssignGrow/Int32/128-10              9.133Ki ± 0%
+MapAssignGrow/Int32/256-10              18.41Ki ± 0%
+MapAssignGrow/Int32/512-10              36.45Ki ± 0%
+MapAssignGrow/Int32/1024-10             72.52Ki ± 0%
+MapAssignGrow/Int32/2048-10             144.7Ki ± 0%
+MapAssignGrow/Int32/4096-10             289.0Ki ± 0%
+MapAssignGrow/Int32/8192-10             577.6Ki ± 0%
+MapAssignGrow/Int32/65536-10            4.510Mi ± 0%
+MapAssignGrow/Str/6-10                    0.000 ± 0%
+MapAssignGrow/Str/12-10                   456.0 ± 0%
+MapAssignGrow/Str/18-10                 1.352Ki ± 0%
+MapAssignGrow/Str/24-10                 1.352Ki ± 0%
+MapAssignGrow/Str/30-10                 3.133Ki ± 0%
+MapAssignGrow/Str/64-10                 6.539Ki ± 0%
+MapAssignGrow/Str/128-10                12.95Ki ± 0%
+MapAssignGrow/Str/256-10                26.23Ki ± 0%
+MapAssignGrow/Str/512-10                52.88Ki ± 0%
+MapAssignGrow/Str/1024-10               106.2Ki ± 0%
+MapAssignGrow/Str/2048-10               212.9Ki ± 0%
+MapAssignGrow/Str/4096-10               426.2Ki ± 0%
+MapAssignGrow/Str/8192-10               852.8Ki ± 0%
+MapAssignGrow/Str/65536-10              6.666Mi ± 0%
+MapAssignPreAllocate/Pointer/6-10         48.00 ± 0%
+MapAssignPreAllocate/Pointer/12-10        424.0 ± 0%
+MapAssignPreAllocate/Pointer/18-10        760.0 ± 0%
+MapAssignPreAllocate/Pointer/24-10        808.0 ± 0%
+MapAssignPreAllocate/Pointer/30-10      1.398Ki ± 0%
+MapAssignPreAllocate/Pointer/64-10      2.789Ki ± 0%
+MapAssignPreAllocate/Pointer/128-10     5.789Ki ± 0%
+MapAssignPreAllocate/Pointer/256-10     11.29Ki ± 0%
+MapAssignPreAllocate/Pointer/512-10     22.04Ki ± 0%
+MapAssignPreAllocate/Pointer/1024-10    44.08Ki ± 0%
+MapAssignPreAllocate/Pointer/2048-10    88.16Ki ± 0%
+MapAssignPreAllocate/Pointer/4096-10    176.3Ki ± 0%
+MapAssignPreAllocate/Pointer/8192-10    352.6Ki ± 0%
+MapAssignPreAllocate/Pointer/65536-10   2.755Mi ± 0%
+MapAssignPreAllocate/Int64/6-10           0.000 ± 0%
+MapAssignPreAllocate/Int64/12-10          328.0 ± 0%
+MapAssignPreAllocate/Int64/18-10          616.0 ± 0%
+MapAssignPreAllocate/Int64/24-10          616.0 ± 0%
+MapAssignPreAllocate/Int64/30-10        1.164Ki ± 0%
+MapAssignPreAllocate/Int64/64-10        2.289Ki ± 0%
+MapAssignPreAllocate/Int64/128-10       4.789Ki ± 0%
+MapAssignPreAllocate/Int64/256-10       9.289Ki ± 0%
+MapAssignPreAllocate/Int64/512-10       18.04Ki ± 0%
+MapAssignPreAllocate/Int64/1024-10      36.08Ki ± 0%
+MapAssignPreAllocate/Int64/2048-10      72.16Ki ± 0%
+MapAssignPreAllocate/Int64/4096-10      144.3Ki ± 0%
+MapAssignPreAllocate/Int64/8192-10      288.6Ki ± 0%
+MapAssignPreAllocate/Int64/65536-10     2.255Mi ± 0%
+MapAssignPreAllocate/Int32/6-10           0.000 ± 0%
+MapAssignPreAllocate/Int32/12-10          328.0 ± 0%
+MapAssignPreAllocate/Int32/18-10          616.0 ± 0%
+MapAssignPreAllocate/Int32/24-10          616.0 ± 0%
+MapAssignPreAllocate/Int32/30-10        1.164Ki ± 0%
+MapAssignPreAllocate/Int32/64-10        2.289Ki ± 0%
+MapAssignPreAllocate/Int32/128-10       4.789Ki ± 0%
+MapAssignPreAllocate/Int32/256-10       9.289Ki ± 0%
+MapAssignPreAllocate/Int32/512-10       18.04Ki ± 0%
+MapAssignPreAllocate/Int32/1024-10      36.08Ki ± 0%
+MapAssignPreAllocate/Int32/2048-10      72.16Ki ± 0%
+MapAssignPreAllocate/Int32/4096-10      144.3Ki ± 0%
+MapAssignPreAllocate/Int32/8192-10      288.6Ki ± 0%
+MapAssignPreAllocate/Int32/65536-10     2.255Mi ± 0%
+MapAssignPreAllocate/Str/6-10             0.000 ± 0%
+MapAssignPreAllocate/Str/12-10            456.0 ± 0%
+MapAssignPreAllocate/Str/18-10            936.0 ± 0%
+MapAssignPreAllocate/Str/24-10            936.0 ± 0%
+MapAssignPreAllocate/Str/30-10          1.789Ki ± 0%
+MapAssignPreAllocate/Str/64-10          3.414Ki ± 0%
+MapAssignPreAllocate/Str/128-10         6.414Ki ± 0%
+MapAssignPreAllocate/Str/256-10         13.29Ki ± 0%
+MapAssignPreAllocate/Str/512-10         26.66Ki ± 0%
+MapAssignPreAllocate/Str/1024-10        53.33Ki ± 0%
+MapAssignPreAllocate/Str/2048-10        106.7Ki ± 0%
+MapAssignPreAllocate/Str/4096-10        213.3Ki ± 0%
+MapAssignPreAllocate/Str/8192-10        426.6Ki ± 0%
+MapAssignPreAllocate/Str/65536-10       3.333Mi ± 0%
+MapAssignReuse/Pointer/6-10               48.00 ± 0%
+MapAssignReuse/Pointer/12-10              96.00 ± 0%
+MapAssignReuse/Pointer/18-10              144.0 ± 0%
+MapAssignReuse/Pointer/24-10              192.0 ± 0%
+MapAssignReuse/Pointer/30-10              240.0 ± 0%
+MapAssignReuse/Pointer/64-10              512.0 ± 0%
+MapAssignReuse/Pointer/128-10           1.000Ki ± 0%
+MapAssignReuse/Pointer/256-10           2.000Ki ± 0%
+MapAssignReuse/Pointer/512-10           4.000Ki ± 0%
+MapAssignReuse/Pointer/1024-10          8.000Ki ± 0%
+MapAssignReuse/Pointer/2048-10          16.00Ki ± 0%
+MapAssignReuse/Pointer/4096-10          32.00Ki ± 0%
+MapAssignReuse/Pointer/8192-10          64.00Ki ± 0%
+MapAssignReuse/Pointer/65536-10         512.0Ki ± 0%
+MapAssignReuse/Int64/6-10                 0.000 ± 0%
+MapAssignReuse/Int64/12-10                0.000 ± 0%
+MapAssignReuse/Int64/18-10                0.000 ± 0%
+MapAssignReuse/Int64/24-10                0.000 ± 0%
+MapAssignReuse/Int64/30-10                0.000 ± 0%
+MapAssignReuse/Int64/64-10                0.000 ± 0%
+MapAssignReuse/Int64/128-10               0.000 ± 0%
+MapAssignReuse/Int64/256-10               0.000 ± 0%
+MapAssignReuse/Int64/512-10               0.000 ± 0%
+MapAssignReuse/Int64/1024-10              0.000 ± 0%
+MapAssignReuse/Int64/2048-10              0.000 ± 0%
+MapAssignReuse/Int64/4096-10              0.000 ± 0%
+MapAssignReuse/Int64/8192-10              0.000 ± 0%
+MapAssignReuse/Int64/65536-10             0.000 ± 0%
+MapAssignReuse/Int32/6-10                 0.000 ± 0%
+MapAssignReuse/Int32/12-10                0.000 ± 0%
+MapAssignReuse/Int32/18-10                0.000 ± 0%
+MapAssignReuse/Int32/24-10                0.000 ± 0%
+MapAssignReuse/Int32/30-10                0.000 ± 0%
+MapAssignReuse/Int32/64-10                0.000 ± 0%
+MapAssignReuse/Int32/128-10               0.000 ± 0%
+MapAssignReuse/Int32/256-10               0.000 ± 0%
+MapAssignReuse/Int32/512-10               0.000 ± 0%
+MapAssignReuse/Int32/1024-10              0.000 ± 0%
+MapAssignReuse/Int32/2048-10              0.000 ± 0%
+MapAssignReuse/Int32/4096-10              0.000 ± 0%
+MapAssignReuse/Int32/8192-10              0.000 ± 0%
+MapAssignReuse/Int32/65536-10             0.000 ± 0%
+MapAssignReuse/Str/6-10                   0.000 ± 0%
+MapAssignReuse/Str/12-10                  0.000 ± 0%
+MapAssignReuse/Str/18-10                  0.000 ± 0%
+MapAssignReuse/Str/24-10                  0.000 ± 0%
+MapAssignReuse/Str/30-10                  0.000 ± 0%
+MapAssignReuse/Str/64-10                  0.000 ± 0%
+MapAssignReuse/Str/128-10                 0.000 ± 0%
+MapAssignReuse/Str/256-10                 0.000 ± 0%
+MapAssignReuse/Str/512-10                 0.000 ± 0%
+MapAssignReuse/Str/1024-10                0.000 ± 0%
+MapAssignReuse/Str/2048-10                0.000 ± 0%
+MapAssignReuse/Str/4096-10                0.000 ± 0%
+MapAssignReuse/Str/8192-10                0.000 ± 0%
+MapAssignReuse/Str/65536-10               0.000 ± 0%
+geomean                                              ¹
+¹ summaries must be >0 to compute geomean
+
+                                      │ swiss_map.txt │
+                                      │   allocs/op   │
+MapIter/Int/6-10                         0.000 ± 0%
+MapIter/Int/12-10                        0.000 ± 0%
+MapIter/Int/18-10                        0.000 ± 0%
+MapIter/Int/24-10                        0.000 ± 0%
+MapIter/Int/30-10                        0.000 ± 0%
+MapIter/Int/64-10                        0.000 ± 0%
+MapIter/Int/128-10                       0.000 ± 0%
+MapIter/Int/256-10                       0.000 ± 0%
+MapIter/Int/512-10                       0.000 ± 0%
+MapIter/Int/1024-10                      0.000 ± 0%
+MapIter/Int/2048-10                      0.000 ± 0%
+MapIter/Int/4096-10                      0.000 ± 0%
+MapIter/Int/8192-10                      0.000 ± 0%
+MapIter/Int/65536-10                     0.000 ± 0%
+MapAccessHit/Int64/6-10                  0.000 ± 0%
+MapAccessHit/Int64/12-10                 0.000 ± 0%
+MapAccessHit/Int64/18-10                 0.000 ± 0%
+MapAccessHit/Int64/24-10                 0.000 ± 0%
+MapAccessHit/Int64/30-10                 0.000 ± 0%
+MapAccessHit/Int64/64-10                 0.000 ± 0%
+MapAccessHit/Int64/128-10                0.000 ± 0%
+MapAccessHit/Int64/256-10                0.000 ± 0%
+MapAccessHit/Int64/512-10                0.000 ± 0%
+MapAccessHit/Int64/1024-10               0.000 ± 0%
+MapAccessHit/Int64/2048-10               0.000 ± 0%
+MapAccessHit/Int64/4096-10               0.000 ± 0%
+MapAccessHit/Int64/8192-10               0.000 ± 0%
+MapAccessHit/Int64/65536-10              0.000 ± 0%
+MapAccessHit/Int32/6-10                  0.000 ± 0%
+MapAccessHit/Int32/12-10                 0.000 ± 0%
+MapAccessHit/Int32/18-10                 0.000 ± 0%
+MapAccessHit/Int32/24-10                 0.000 ± 0%
+MapAccessHit/Int32/30-10                 0.000 ± 0%
+MapAccessHit/Int32/64-10                 0.000 ± 0%
+MapAccessHit/Int32/128-10                0.000 ± 0%
+MapAccessHit/Int32/256-10                0.000 ± 0%
+MapAccessHit/Int32/512-10                0.000 ± 0%
+MapAccessHit/Int32/1024-10               0.000 ± 0%
+MapAccessHit/Int32/2048-10               0.000 ± 0%
+MapAccessHit/Int32/4096-10               0.000 ± 0%
+MapAccessHit/Int32/8192-10               0.000 ± 0%
+MapAccessHit/Int32/65536-10              0.000 ± 0%
+MapAccessHit/Str/6-10                    0.000 ± 0%
+MapAccessHit/Str/12-10                   0.000 ± 0%
+MapAccessHit/Str/18-10                   0.000 ± 0%
+MapAccessHit/Str/24-10                   0.000 ± 0%
+MapAccessHit/Str/30-10                   0.000 ± 0%
+MapAccessHit/Str/64-10                   0.000 ± 0%
+MapAccessHit/Str/128-10                  0.000 ± 0%
+MapAccessHit/Str/256-10                  0.000 ± 0%
+MapAccessHit/Str/512-10                  0.000 ± 0%
+MapAccessHit/Str/1024-10                 0.000 ± 0%
+MapAccessHit/Str/2048-10                 0.000 ± 0%
+MapAccessHit/Str/4096-10                 0.000 ± 0%
+MapAccessHit/Str/8192-10                 0.000 ± 0%
+MapAccessHit/Str/65536-10                0.000 ± 0%
+MapAccessMiss/Int64/6-10                 0.000 ± 0%
+MapAccessMiss/Int64/12-10                0.000 ± 0%
+MapAccessMiss/Int64/18-10                0.000 ± 0%
+MapAccessMiss/Int64/24-10                0.000 ± 0%
+MapAccessMiss/Int64/30-10                0.000 ± 0%
+MapAccessMiss/Int64/64-10                0.000 ± 0%
+MapAccessMiss/Int64/128-10               0.000 ± 0%
+MapAccessMiss/Int64/256-10               0.000 ± 0%
+MapAccessMiss/Int64/512-10               0.000 ± 0%
+MapAccessMiss/Int64/1024-10              0.000 ± 0%
+MapAccessMiss/Int64/2048-10              0.000 ± 0%
+MapAccessMiss/Int64/4096-10              0.000 ± 0%
+MapAccessMiss/Int64/8192-10              0.000 ± 0%
+MapAccessMiss/Int64/65536-10             0.000 ± 0%
+MapAccessMiss/Int32/6-10                 0.000 ± 0%
+MapAccessMiss/Int32/12-10                0.000 ± 0%
+MapAccessMiss/Int32/18-10                0.000 ± 0%
+MapAccessMiss/Int32/24-10                0.000 ± 0%
+MapAccessMiss/Int32/30-10                0.000 ± 0%
+MapAccessMiss/Int32/64-10                0.000 ± 0%
+MapAccessMiss/Int32/128-10               0.000 ± 0%
+MapAccessMiss/Int32/256-10               0.000 ± 0%
+MapAccessMiss/Int32/512-10               0.000 ± 0%
+MapAccessMiss/Int32/1024-10              0.000 ± 0%
+MapAccessMiss/Int32/2048-10              0.000 ± 0%
+MapAccessMiss/Int32/4096-10              0.000 ± 0%
+MapAccessMiss/Int32/8192-10              0.000 ± 0%
+MapAccessMiss/Int32/65536-10             0.000 ± 0%
+MapAccessMiss/Str/6-10                   0.000 ± 0%
+MapAccessMiss/Str/12-10                  0.000 ± 0%
+MapAccessMiss/Str/18-10                  0.000 ± 0%
+MapAccessMiss/Str/24-10                  0.000 ± 0%
+MapAccessMiss/Str/30-10                  0.000 ± 0%
+MapAccessMiss/Str/64-10                  0.000 ± 0%
+MapAccessMiss/Str/128-10                 0.000 ± 0%
+MapAccessMiss/Str/256-10                 0.000 ± 0%
+MapAccessMiss/Str/512-10                 0.000 ± 0%
+MapAccessMiss/Str/1024-10                0.000 ± 0%
+MapAccessMiss/Str/2048-10                0.000 ± 0%
+MapAccessMiss/Str/4096-10                0.000 ± 0%
+MapAccessMiss/Str/8192-10                0.000 ± 0%
+MapAccessMiss/Str/65536-10               0.000 ± 0%
+MapAssignGrow/Int64/6-10                 0.000 ± 0%
+MapAssignGrow/Int64/12-10                3.000 ± 0%
+MapAssignGrow/Int64/18-10                5.000 ± 0%
+MapAssignGrow/Int64/24-10                5.000 ± 0%
+MapAssignGrow/Int64/30-10                7.000 ± 0%
+MapAssignGrow/Int64/64-10                9.000 ± 0%
+MapAssignGrow/Int64/128-10               11.00 ± 0%
+MapAssignGrow/Int64/256-10               13.00 ± 0%
+MapAssignGrow/Int64/512-10               15.00 ± 0%
+MapAssignGrow/Int64/1024-10              20.00 ± 0%
+MapAssignGrow/Int64/2048-10              29.00 ± 0%
+MapAssignGrow/Int64/4096-10              46.00 ± 0%
+MapAssignGrow/Int64/8192-10              79.00 ± 0%
+MapAssignGrow/Int64/65536-10             530.0 ± 0%
+MapAssignGrow/Int32/6-10                 0.000 ± 0%
+MapAssignGrow/Int32/12-10                3.000 ± 0%
+MapAssignGrow/Int32/18-10                5.000 ± 0%
+MapAssignGrow/Int32/24-10                5.000 ± 0%
+MapAssignGrow/Int32/30-10                7.000 ± 0%
+MapAssignGrow/Int32/64-10                9.000 ± 0%
+MapAssignGrow/Int32/128-10               11.00 ± 0%
+MapAssignGrow/Int32/256-10               13.00 ± 0%
+MapAssignGrow/Int32/512-10               15.00 ± 0%
+MapAssignGrow/Int32/1024-10              20.00 ± 0%
+MapAssignGrow/Int32/2048-10              29.00 ± 0%
+MapAssignGrow/Int32/4096-10              46.00 ± 0%
+MapAssignGrow/Int32/8192-10              79.00 ± 0%
+MapAssignGrow/Int32/65536-10             530.0 ± 0%
+MapAssignGrow/Str/6-10                   0.000 ± 0%
+MapAssignGrow/Str/12-10                  3.000 ± 0%
+MapAssignGrow/Str/18-10                  5.000 ± 0%
+MapAssignGrow/Str/24-10                  5.000 ± 0%
+MapAssignGrow/Str/30-10                  7.000 ± 0%
+MapAssignGrow/Str/64-10                  9.000 ± 0%
+MapAssignGrow/Str/128-10                 11.00 ± 0%
+MapAssignGrow/Str/256-10                 13.00 ± 0%
+MapAssignGrow/Str/512-10                 15.00 ± 0%
+MapAssignGrow/Str/1024-10                20.00 ± 0%
+MapAssignGrow/Str/2048-10                29.00 ± 0%
+MapAssignGrow/Str/4096-10                46.00 ± 0%
+MapAssignGrow/Str/8192-10                79.00 ± 0%
+MapAssignGrow/Str/65536-10               530.0 ± 0%
+MapAssignPreAllocate/Pointer/6-10        6.000 ± 0%
+MapAssignPreAllocate/Pointer/12-10       15.00 ± 0%
+MapAssignPreAllocate/Pointer/18-10       21.00 ± 0%
+MapAssignPreAllocate/Pointer/24-10       27.00 ± 0%
+MapAssignPreAllocate/Pointer/30-10       33.00 ± 0%
+MapAssignPreAllocate/Pointer/64-10       67.00 ± 0%
+MapAssignPreAllocate/Pointer/128-10      131.0 ± 0%
+MapAssignPreAllocate/Pointer/256-10      259.0 ± 0%
+MapAssignPreAllocate/Pointer/512-10      515.0 ± 0%
+MapAssignPreAllocate/Pointer/1024-10    1.029k ± 0%
+MapAssignPreAllocate/Pointer/2048-10    2.057k ± 0%
+MapAssignPreAllocate/Pointer/4096-10    4.113k ± 0%
+MapAssignPreAllocate/Pointer/8192-10    8.225k ± 0%
+MapAssignPreAllocate/Pointer/65536-10   65.79k ± 0%
+MapAssignPreAllocate/Int64/6-10          0.000 ± 0%
+MapAssignPreAllocate/Int64/12-10         3.000 ± 0%
+MapAssignPreAllocate/Int64/18-10         3.000 ± 0%
+MapAssignPreAllocate/Int64/24-10         3.000 ± 0%
+MapAssignPreAllocate/Int64/30-10         3.000 ± 0%
+MapAssignPreAllocate/Int64/64-10         3.000 ± 0%
+MapAssignPreAllocate/Int64/128-10        3.000 ± 0%
+MapAssignPreAllocate/Int64/256-10        3.000 ± 0%
+MapAssignPreAllocate/Int64/512-10        3.000 ± 0%
+MapAssignPreAllocate/Int64/1024-10       5.000 ± 0%
+MapAssignPreAllocate/Int64/2048-10       9.000 ± 0%
+MapAssignPreAllocate/Int64/4096-10       17.00 ± 0%
+MapAssignPreAllocate/Int64/8192-10       33.00 ± 0%
+MapAssignPreAllocate/Int64/65536-10      257.0 ± 0%
+MapAssignPreAllocate/Int32/6-10          0.000 ± 0%
+MapAssignPreAllocate/Int32/12-10         3.000 ± 0%
+MapAssignPreAllocate/Int32/18-10         3.000 ± 0%
+MapAssignPreAllocate/Int32/24-10         3.000 ± 0%
+MapAssignPreAllocate/Int32/30-10         3.000 ± 0%
+MapAssignPreAllocate/Int32/64-10         3.000 ± 0%
+MapAssignPreAllocate/Int32/128-10        3.000 ± 0%
+MapAssignPreAllocate/Int32/256-10        3.000 ± 0%
+MapAssignPreAllocate/Int32/512-10        3.000 ± 0%
+MapAssignPreAllocate/Int32/1024-10       5.000 ± 0%
+MapAssignPreAllocate/Int32/2048-10       9.000 ± 0%
+MapAssignPreAllocate/Int32/4096-10       17.00 ± 0%
+MapAssignPreAllocate/Int32/8192-10       33.00 ± 0%
+MapAssignPreAllocate/Int32/65536-10      257.0 ± 0%
+MapAssignPreAllocate/Str/6-10            0.000 ± 0%
+MapAssignPreAllocate/Str/12-10           3.000 ± 0%
+MapAssignPreAllocate/Str/18-10           3.000 ± 0%
+MapAssignPreAllocate/Str/24-10           3.000 ± 0%
+MapAssignPreAllocate/Str/30-10           3.000 ± 0%
+MapAssignPreAllocate/Str/64-10           3.000 ± 0%
+MapAssignPreAllocate/Str/128-10          3.000 ± 0%
+MapAssignPreAllocate/Str/256-10          3.000 ± 0%
+MapAssignPreAllocate/Str/512-10          3.000 ± 0%
+MapAssignPreAllocate/Str/1024-10         5.000 ± 0%
+MapAssignPreAllocate/Str/2048-10         9.000 ± 0%
+MapAssignPreAllocate/Str/4096-10         17.00 ± 0%
+MapAssignPreAllocate/Str/8192-10         33.00 ± 0%
+MapAssignPreAllocate/Str/65536-10        257.0 ± 0%
+MapAssignReuse/Pointer/6-10              6.000 ± 0%
+MapAssignReuse/Pointer/12-10             12.00 ± 0%
+MapAssignReuse/Pointer/18-10             18.00 ± 0%
+MapAssignReuse/Pointer/24-10             24.00 ± 0%
+MapAssignReuse/Pointer/30-10             30.00 ± 0%
+MapAssignReuse/Pointer/64-10             64.00 ± 0%
+MapAssignReuse/Pointer/128-10            128.0 ± 0%
+MapAssignReuse/Pointer/256-10            256.0 ± 0%
+MapAssignReuse/Pointer/512-10            512.0 ± 0%
+MapAssignReuse/Pointer/1024-10          1.024k ± 0%
+MapAssignReuse/Pointer/2048-10          2.048k ± 0%
+MapAssignReuse/Pointer/4096-10          4.096k ± 0%
+MapAssignReuse/Pointer/8192-10          8.192k ± 0%
+MapAssignReuse/Pointer/65536-10         65.54k ± 0%
+MapAssignReuse/Int64/6-10                0.000 ± 0%
+MapAssignReuse/Int64/12-10               0.000 ± 0%
+MapAssignReuse/Int64/18-10               0.000 ± 0%
+MapAssignReuse/Int64/24-10               0.000 ± 0%
+MapAssignReuse/Int64/30-10               0.000 ± 0%
+MapAssignReuse/Int64/64-10               0.000 ± 0%
+MapAssignReuse/Int64/128-10              0.000 ± 0%
+MapAssignReuse/Int64/256-10              0.000 ± 0%
+MapAssignReuse/Int64/512-10              0.000 ± 0%
+MapAssignReuse/Int64/1024-10             0.000 ± 0%
+MapAssignReuse/Int64/2048-10             0.000 ± 0%
+MapAssignReuse/Int64/4096-10             0.000 ± 0%
+MapAssignReuse/Int64/8192-10             0.000 ± 0%
+MapAssignReuse/Int64/65536-10            0.000 ± 0%
+MapAssignReuse/Int32/6-10                0.000 ± 0%
+MapAssignReuse/Int32/12-10               0.000 ± 0%
+MapAssignReuse/Int32/18-10               0.000 ± 0%
+MapAssignReuse/Int32/24-10               0.000 ± 0%
+MapAssignReuse/Int32/30-10               0.000 ± 0%
+MapAssignReuse/Int32/64-10               0.000 ± 0%
+MapAssignReuse/Int32/128-10              0.000 ± 0%
+MapAssignReuse/Int32/256-10              0.000 ± 0%
+MapAssignReuse/Int32/512-10              0.000 ± 0%
+MapAssignReuse/Int32/1024-10             0.000 ± 0%
+MapAssignReuse/Int32/2048-10             0.000 ± 0%
+MapAssignReuse/Int32/4096-10             0.000 ± 0%
+MapAssignReuse/Int32/8192-10             0.000 ± 0%
+MapAssignReuse/Int32/65536-10            0.000 ± 0%
+MapAssignReuse/Str/6-10                  0.000 ± 0%
+MapAssignReuse/Str/12-10                 0.000 ± 0%
+MapAssignReuse/Str/18-10                 0.000 ± 0%
+MapAssignReuse/Str/24-10                 0.000 ± 0%
+MapAssignReuse/Str/30-10                 0.000 ± 0%
+MapAssignReuse/Str/64-10                 0.000 ± 0%
+MapAssignReuse/Str/128-10                0.000 ± 0%
+MapAssignReuse/Str/256-10                0.000 ± 0%
+MapAssignReuse/Str/512-10                0.000 ± 0%
+MapAssignReuse/Str/1024-10               0.000 ± 0%
+MapAssignReuse/Str/2048-10               0.000 ± 0%
+MapAssignReuse/Str/4096-10               0.000 ± 0%
+MapAssignReuse/Str/8192-10               0.000 ± 0%
+MapAssignReuse/Str/65536-10              0.000 ± 0%
+geomean                                             ¹
+¹ summaries must be >0 to compute geomean
